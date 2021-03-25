@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+    xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    
+    <!-- Define a name used to get an entity manager. Define that you will 
+    complete transactions with the DB  -->
+    <persistence-unit name="Message" transaction-type="JTA">
+   <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>java:app/jdbc/SQLServer2</jta-data-source>
+        <!-- Define the class for Hibernate which implements JPA -->
+        <!-- Define the object that should be persisted in the database -->
+        <class>org.haris.socialmedia.socialmedia.model.Message</class>
+        
+        <properties>
+        <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+        </properties>
+
+        
+        
+        
+        
+        
+        <!--        <properties>
+             Driver for DB database 
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+             URL for DB 
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=Social" />
+             Username 
+            <property name="javax.persistence.jdbc.user" value="sa" />
+             Password 
+            <property name="javax.persistence.jdbc.password" value="netmail123" />
+        </properties>-->
+    </persistence-unit>
+</persistence>

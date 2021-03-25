@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC
+        "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
+        "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+
+<resources>
+
+
+    <!-- db1 -->
+    <jdbc-connection-pool
+            datasource-classname="com.microsoft.sqlserver.jdbc.SQLServerDataSource" name="SQLServer2"
+            res-type="javax.sql.DataSource"
+            steady-pool-size="1"
+            is-connection-validation-required="true"
+            connection-validation-method="meta-data"
+            max-pool-size="10">
+        <property name="Password" value="netmail123"/>
+        <property name="User" value="sa"/>
+        <property name="URL" value="jdbc:sqlserver://localhost:1433;databaseName=Social"/>
+        <property name="useSSL" value="false"/>
+        
+    </jdbc-connection-pool>
+    <jdbc-resource pool-name="SQLServer2" jndi-name="jdbc/SQLServer2"/>
+
+
+
+</resources>
